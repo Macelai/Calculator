@@ -1,6 +1,6 @@
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -12,26 +12,37 @@ public class Window extends JFrame {
 
 	public Window() {
 		setTitle("Calculadora");
-		setSize(400,400);
+		setSize(350,350);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());		
 		
-		
 		JLabel number = new JLabel("0.0");
+		number.setFont(new Font("Monospace", Font.BOLD, 16));
 		JPanel panel1 = new JPanel();
 		
 		Operations operations = new Operations(number);
 		
 		add(panel1, BorderLayout.PAGE_START);
+		panel1.setBackground(Color.white);
 		panel1.add(number);
 		
 		JPanel panel2 = new JPanel();	
 		add(panel2, BorderLayout.CENTER);
-		panel2.setLayout(new GridLayout(5,4));
+		panel2.setLayout(new GridLayout(6,4));		
 		
-		
-		
+		JButton b21 = new JButton("MS");
+		b21.addActionListener(operations);
+		b21.setActionCommand("MS");
+		JButton b22 = new JButton("MR");
+		b22.addActionListener(operations);
+		b22.setActionCommand("MR");
+		JButton b23 = new JButton("MC");
+		b23.addActionListener(operations);
+		b23.setActionCommand("MC");
+		JButton b24 = new JButton("M+");
+		b24.addActionListener(operations);
+		b24.setActionCommand("M+");
 		JButton b1 = new JButton("C");
 		b1.addActionListener(operations);
 		b1.setActionCommand("C");
@@ -86,14 +97,18 @@ public class Window extends JFrame {
 		JButton b18 = new JButton(".");
 		b18.addActionListener(operations);
 		b18.setActionCommand("PON");
-		JButton b19 = new JButton("?");
+		JButton b19 = new JButton("+/-");
 		b19.addActionListener(operations);
-		b19.setActionCommand("?");
+		b19.setActionCommand("INV");
 		JButton b20 = new JButton("=");
 		b20.addActionListener(operations);
 		b20.setActionCommand("EQUALS");		
 		
-		panel2.add(b1);		
+		panel2.add(b21);		
+		panel2.add(b22);
+		panel2.add(b23);
+		panel2.add(b24);
+		panel2.add(b1);
 		panel2.add(b2);	
 		panel2.add(b3);	
 		panel2.add(b4);	
