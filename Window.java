@@ -16,9 +16,7 @@ public class Window extends JFrame {
         JLabel memo = new JLabel("0+0");
         memo.setFont(new Font("Monospace", Font.BOLD, 20));
 
-        File file = new File();
-
-        Operations operations = new Operations(number, memo,file);
+        Operations operations = new Operations(number, memo);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(2,1));
