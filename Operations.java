@@ -12,13 +12,12 @@ public class Operations implements ActionListener{
     private int op = 0;
     private boolean ponto = false;
     private JLabel label, memo;
-    private File file;
-    Operations(JLabel label, JLabel memo, File file){
+    Operations(JLabel label, JLabel memo){
         this.label=label;
         this.memo=memo;
-        this.file=file;
     }
     Memory memory = new Memory();
+    File file = new File();
 
     @Override
     public void actionPerformed(ActionEvent e) {
